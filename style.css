@@ -1,0 +1,347 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* border: 1px solid red; */
+}
+@font-face {
+    font-family: roboto;
+    src: url(./Roboto-Medium.ttf);
+}
+:root {
+    --basic: #e7e7e7;
+    --primary: rgb(60, 161, 255);
+    --secondry: rgb(73, 71, 71);
+    --textShadow: -3px 3px 3px rgba(0, 0, 0, 0.26);
+}
+
+body {
+    height: 100vh;
+    background-color: var(--basic);
+    color: var(--secondry);
+    font-family: Roboto;
+}
+
+.parent {
+    width: 330px;
+    padding: 1.4em;
+    margin: 2em auto;
+    border-radius: 15px;
+    background-color: var(--basic);
+
+    box-shadow:
+        -5px 5px 10px rgba(0, 0, 0, 0.527),
+        5px -5px 30px #fffef7,
+        5px -5px 5px rgba(0, 0, 0, 0.24) inset,
+        -5px 5px 5px rgb(255, 255, 255) inset;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+body i:hover{
+    color: rgb(58, 143, 255);
+}
+nav i {
+    color: var(--primary);
+    text-shadow: var(--textShadow);
+    cursor: pointer;
+}
+nav i:hover{
+animation: navAnim 1s;
+}
+@keyframes navAnim {
+    0%{
+        transform: translateY(0px) rotate(0deg);
+    }
+   50%{
+        transform: translateY(-3px) rotate(7deg);
+    }
+    0%{
+        transform: translateY(0px) rotate(0deg);
+    }
+}
+
+nav .left i {
+    padding-right: .7em;
+}
+
+nav .right i {
+    padding-left: 1em;
+}
+
+/* middle content  */
+.middle {
+    width: 100%;
+    display: flex;
+    margin: 2em auto 2em;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.middle i {
+    color: var(--primary);
+    text-shadow: var(--textShadow);
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 4;
+}
+.leftArrow i{
+    animation: arrowLeft 3s infinite;
+}
+.rightArrow i{
+    animation: arrowRight 3s infinite;
+}
+@keyframes arrowLeft{
+    0%{
+        transform: translateX(0px);
+    }
+    50%{
+        transform: translateX(-6px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+}
+@keyframes arrowRight{
+    0%{
+        transform: translateX(0px);
+    }
+    50%{
+        transform: translateX(6px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+}
+
+.middle img {
+    width: 100%;
+    z-index: 3;
+}
+.myImages{
+    display: flex;
+    width: 160px;
+    margin: auto;
+    transition: .6s;
+    overflow: hidden;
+}
+
+/* price and line tag  */
+.price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price div:nth-child(2) {
+    font-weight: 600;
+    font-size: 1.7rem;
+}
+
+hr {
+    height: 3px;
+    background-color: var(--secondry);
+    margin-bottom: 1em;
+}
+
+/* color and quantity section  */
+.selectionHead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.colorQuantity {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.colorTab {
+    width: 30%;
+}
+
+.selectionHead div {
+    font-size: .7rem;
+}
+.selectionHead div:nth-child(2){
+    margin-right: 2.6em;
+}
+
+.colorTab{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: .4em 0em;
+}
+
+.circle {
+    width: 13px;
+    height: 13px;
+    background-color: red;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: .5s;
+    box-shadow: 1px -1px 4px rgba(0, 0, 0, 0.425) inset, var(--textShadow);
+    position: relative;
+
+}
+
+.circle::after {
+    content: '';
+    position: absolute;
+    border: none;
+    padding: 0em;
+    margin: auto;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    transition: .5s;
+}
+
+.circle:hover {
+    transform: scale(1.6);
+}
+
+.blueCircle:hover::after {
+    padding: .6em;
+    border: 1px solid rgba(0, 68, 255, 0.705);
+}
+
+.whiteCircle:hover::after {
+    padding: .6em;
+    border: 1px solid rgba(167, 167, 167, 0.767);
+}
+
+.blackCircle:hover::after {
+    padding: .6em;
+    border: 1px solid rgba(0, 0, 0, 0.705);
+}
+
+.whiteCircle {
+    background: white;
+}
+
+.blueCircle {
+    background-color: rgb(0, 101, 252);
+}
+
+.blackCircle {
+    background-color: var(--secondry);
+}
+
+/* qtTab styling  */
+.qtTab {
+    width: 24%;
+}
+
+.qtTab{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: .4em 0em;
+}
+
+.qtTab i {
+    padding: 2px;
+    font-size: .7rem;
+    font-weight: 900;
+    box-shadow:
+        -2px 1px 2px rgba(0, 0, 0, 0.527),
+        2px -1px 2px #fffef7,
+        2px -1px 2px rgba(0, 0, 0, 0.24) inset,
+        -2px 1px 2px rgb(255, 255, 255) inset;
+    cursor: pointer;
+}
+
+.qtTab i:hover {
+    color: var(--primary);
+}
+
+.increase {
+    color: var(--primary);
+    font-weight: 900;
+}
+
+.counter {
+    font-size: 1.5rem;
+}
+
+/* product info */
+.detailsHead{
+    font-size: .7rem;
+    font-weight: 900;
+    margin: 1em 0em;
+}
+.info{
+    display: flex;
+    font-size: .7rem;
+}
+.info div:nth-child(1){
+    width: 40%;
+    font-weight: 600;
+}
+hr{
+    margin-bottom: 1em;
+}
+
+/* call to action button  */
+button{
+    cursor: pointer;
+    width: 80%;
+    margin:2em auto 1em;
+    display: block;
+    padding: .6em 0;
+    background-color: var(--primary);
+    border: none;
+    color: var(--basic);
+    font-size: 1.4rem;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: .4s;
+    text-shadow: 2px 2px 2px rgb(41, 38, 15);
+    box-shadow:
+        -5px 5px 10px rgba(0, 0, 0, 0.541),
+        5px -5px 30px #fffef7,
+        3px -3px 2px rgba(0, 0, 0, 0.671) inset;
+}
+button:hover{
+    background-color: rgb(58, 143, 255);
+}
+
+/* Thankyou message styling  */
+.thankyou{
+    width: 300px;
+    height: 300px;
+    background-color: black;
+    position: absolute;
+    top: 0;
+
+}
+
+/* java script dynamic classes  */
+.jsImageAnimation{
+    animation: jsMainImage 2s;
+}
+@keyframes jsMainImage {
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(-5px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+/* media query  */
+/* @media screen and (max-width=360px) {
+    .parent{
+        width:87vw;
+        margin:.5em auto;
+    }
+} */
